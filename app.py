@@ -12,7 +12,7 @@ SPACE_ID = "shaheerawan3/Object_Recognition_Space"
 @lru_cache(maxsize=1)
 def get_space_client():
     """Create one client for the remote object-recognition Space."""
-    return Client(SPACE_ID, hf_token=os.environ.get("HF_TOKEN"))
+    return Client(SPACE_ID, token=os.environ.get("HF_TOKEN"))
 
 
 @spaces.GPU(duration=120)
