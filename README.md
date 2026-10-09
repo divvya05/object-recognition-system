@@ -28,15 +28,22 @@ hardware; object detection itself is handled by the linked detector Space.
 Run the notebooks for the project workflow. For a private remote detector, set
 `HF_TOKEN` in the environment before launching the app notebook.
 
-Install dependencies and start JupyterLab:
+Use Python 3.12 for the local notebook kernel; this matches the Space runtime
+and supports the TensorFlow dependency. On Windows, create the project
+environment and start JupyterLab with:
 
-```bash
-pip install -r requirements.txt
-jupyter lab
+```powershell
+python -m pip install --user uv
+python -m uv python install 3.12
+python -m uv venv --python 3.12 .venv
+python -m uv pip install --python .venv\Scripts\python.exe -r requirements.txt
+.\.venv\Scripts\python.exe -m ipykernel install --user --name object-recognition --display-name "Python 3.12 (Object Recognition)"
+.\.venv\Scripts\jupyter.exe lab
 ```
 
-Open `object_recognition_app.ipynb` and run its cells from top to bottom. Its
-last cell launches the Gradio interface inside the notebook.
+Open `object_recognition_app.ipynb` and select the **Python 3.12 (Object
+Recognition)** kernel, then run its cells from top to bottom. Its last cell
+launches the Gradio interface inside the notebook.
 
 Run `cifar10_exploration.ipynb` separately to explore CIFAR-10; its first run
 downloads the dataset. Hugging Face Spaces uses `app.py` as its required
