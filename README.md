@@ -1,14 +1,19 @@
 ---
-title: Object Recognition Space
-emoji: 🐠
+title: Object Identifier ML
+emoji: 🏢
 colorFrom: pink
-colorTo: red
+colorTo: blue
 sdk: gradio
-sdk_version: 5.49.1
+sdk_version: 6.30.0
+python_version: '3.12'
 app_file: app.py
 pinned: false
-license: apache-2.0
 ---
+
+## JupyterLab-first Object Recognition
+
+The deployed app is available at
+[Summer101xoxo/Object_Identifier_ML](https://huggingface.co/spaces/Summer101xoxo/Object_Identifier_ML).
 
 The primary project workflow is in JupyterLab:
 
@@ -17,29 +22,20 @@ The primary project workflow is in JupyterLab:
 [Object Recognition Space](https://huggingface.co/spaces/shaheerawan3/Object_Recognition_Space).
 - `cifar10_exploration.ipynb` loads and explores the CIFAR-10 dataset.
 
-`app.py` provides the equivalent object-recognition interface as the entry
-point required to deploy this project as a Hugging Face Space. For a private
-remote Space, set `HF_TOKEN` in the environment before running either app.
+`app.py` is retained as the Gradio entry point required by Hugging Face Spaces.
+Run the notebooks for the project workflow. For a private remote detector,
+set `HF_TOKEN` in the environment before launching the app notebook.
 
-## Run the app
-
-Install dependencies and start JupyterLab from the project folder:
+Install dependencies and start JupyterLab:
 
 ```bash
 pip install -r requirements.txt
 jupyter lab
 ```
 
-Open `object_recognition_app.ipynb` in JupyterLab and run its cells from top to
-bottom. The final cell launches the Gradio interface inside the notebook.
-
-To launch the deployment entry point outside the notebook, run:
-
-```bash
-python app.py
-```
+Open `object_recognition_app.ipynb` and run its cells from top to bottom. Its
+last cell launches the Gradio interface inside the notebook.
 
 Run `cifar10_exploration.ipynb` separately to explore CIFAR-10; its first run
-downloads the dataset.
-
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+downloads the dataset. Hugging Face Spaces uses `app.py` as its required
+deployment entry point.
