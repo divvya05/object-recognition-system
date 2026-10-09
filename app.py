@@ -43,7 +43,7 @@ def process_video(video_path):
     )
 
 
-with gr.Blocks(title="AI Object Recognition System", theme=gr.themes.Soft()) as demo:
+with gr.Blocks(title="AI Object Recognition System") as demo:
     gr.Markdown("""
     # 🤖 AI Object Recognition System
     ### Intelligent Auto-Adjusting Detection & Tracking
@@ -123,4 +123,4 @@ with gr.Blocks(title="AI Object Recognition System", theme=gr.themes.Soft()) as 
 
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(theme=gr.themes.Soft())
