@@ -23,8 +23,10 @@ The primary project workflow is in JupyterLab:
 - `cifar10_exploration.ipynb` loads and explores the CIFAR-10 dataset.
 
 `app.py` is retained as the Gradio entry point required by Hugging Face Spaces.
-Run the notebooks for the project workflow. For a private remote detector,
-set `HF_TOKEN` in the environment before launching the app notebook.
+The Space uses ZeroGPU-decorated callbacks as required by its selected
+hardware; object detection itself is handled by the linked detector Space.
+Run the notebooks for the project workflow. For a private remote detector, set
+`HF_TOKEN` in the environment before launching the app notebook.
 
 Install dependencies and start JupyterLab:
 

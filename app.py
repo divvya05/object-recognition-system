@@ -3,6 +3,7 @@ from functools import lru_cache
 
 import gradio as gr
 from gradio_client import Client, handle_file
+import spaces
 
 
 SPACE_ID = "shaheerawan3/Object_Recognition_Space"
@@ -14,6 +15,7 @@ def get_space_client():
     return Client(SPACE_ID, hf_token=os.environ.get("HF_TOKEN"))
 
 
+@spaces.GPU(duration=120)
 def process_static_image(image_path):
     """Forward an uploaded image to the Space's static-image endpoint."""
     if image_path is None:
@@ -25,6 +27,7 @@ def process_static_image(image_path):
     )
 
 
+@spaces.GPU(duration=120)
 def process_video(video_path):
     """Forward an uploaded video to the Space's video-processing endpoint."""
     if video_path is None:

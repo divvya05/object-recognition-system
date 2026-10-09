@@ -2,4 +2,5 @@ gradio
 gradio_client
 jupyterlab
 matplotlib
+spaces
 tensorflow
