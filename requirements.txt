@@ -1,0 +1,5 @@
+gradio
+gradio_client
+jupyterlab
+matplotlib
+tensorflow
